@@ -5,26 +5,123 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kit de manif</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/dark.css">
+
+    <style>
+        table {
+            background-color: #202b38;
+            border-radius: 5px;
+        }
+
+        img {
+            border-radius: 5px;
+        }
+
+        thead th {
+            background-color: #161f27;
+        }
+
+        thead th:first-child {
+            border-radius: 5px 0 0 0;
+        }
+
+        thead th:last-child {
+            border-radius: 0 5px 0 0;
+        }
+
+        h2 + div {
+            background-color: #202b38;
+            border-radius: 5px;
+            padding: 0.25rem 0;
+        }
+    </style>
+
+
+    <style>
+        .blurry-background {
+            position: fixed;
+            overflow: hidden;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: -1;
+        }
+
+        /* e50073 */
+        .blurry-background-art {
+            background-color: #222;
+            background-position: top;
+            background-repeat: none;
+            background-size: cover;
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            right: -30px;
+            top: -30px;
+            -webkit-backface-visibility: hidden;
+            -webkit-filter: blur(1px);
+            -webkit-perspective: 1000;
+            -webkit-transform: translateZ(0);
+            backface-visibility: hidden;
+            filter: blur(1px);
+            perspective: 1000;
+            transform: translateZ(0);
+        }
+
+        .blurry-background-art::before {
+            background: linear-gradient(180deg,
+                    rgba(32, 43, 56, 0.5) 0,
+                    rgba(32, 43, 56, 0.85) 50%,
+                    var(--background-body));
+            bottom: 0;
+            content: "";
+            display: block;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="blurry-background">
+        <div class="blurry-background-art"
+            style="bottom: 42vh; background-image: url(&quot;https://solidaires44.org/wp-content/uploads/2023/05/344746616_550656533648946_5550772275470801148_n.jpg&quot;);">
+        </div>
+    </div>
 
     <header>
         <h1>Que prendre sur soi en manif</h1>
     </header>
 
-    <h2>
+    <ol>
+        <li><a href="#avant">Avant d'aller en manifestation</a></li>
+        <li><a href="#demarrage">Kit de démarrage</a></li>
+        <li><a href="#tranquillite">Kit de tranquillité</a></li>
+        <li><a href="#securite">Kit de sécurité</a></li>
+        <li><a href="#protection">Kit de protection</a></li>
+        <li><a href="#gav">Notes sur la garde à vue</a></li>
+    </ol>
+
+    <hr>
+
+    <h2 id="avant">
         Avant d'aller en manifestation
     </h2>
 
-    <ul>
-        <li>Prendre ses papiers d'identité</li>
-        <li>Avoir le numéro de téléphone d'une personne proche</li>
-        <li>Avertir une personne proche de son départ et de son arrivée</li>
-    </ul>
+    <div>
+        <ul>
+            <li>Prendre ses papiers d'identité</li>
+            <li>Avoir le numéro de téléphone d'une personne proche</li>
+            <li>Avertir une personne proche de son départ et de son arrivée</li>
+        </ul>
+    </div>
 
-    <h2>
+    <hr>
+
+    <h2 id="demarrage">
         Kit de démarrage (~1€)
     </h2>
 
@@ -61,7 +158,9 @@
         </tbody>
     </table>
 
-    <h2>
+    <hr>
+
+    <h2 id="tranquillite">
         Kit de tranquillité (~20€)
     </h2>
 
@@ -109,7 +208,9 @@
         </tbody>
     </table>
 
-    <h2>
+    <hr>
+
+    <h2 id="securite">
         Kit de sécurité (~50€)
     </h2>
 
@@ -156,15 +257,16 @@
         </tbody>
     </table>
 
+    <hr>
 
-    <h2>
+    <h2 id="protection">
         Kit de protection (~150€)
     </h2>
 
     <table>
         <thead>
             <tr>
-                <th>Image</th>
+                <th style="width: 20%;">Image</th>
                 <th>Équipement</th>
                 <th>Prix unitaire (€)</th>
                 <th>Disponible où</th>
@@ -213,6 +315,35 @@
             </tr>
         </tbody>
     </table>
+
+    <hr>
+
+    <h2 id="gav">
+        Notes sur la garde à vue
+    </h2>
+
+    <div>
+        L'Union syndical Solidaires propose une fiche sur la garde à vue très bien realisée :
+
+        <ul>
+            <li>
+                <a
+                    href="https://solidaires.org/connaitre-ses-droits/fiche-droits/en-cours-dactualisation/fiche-la-garde-a-vue-en-10-questions/">
+                    La garde à vue en 10 questions (version web)
+                </a>
+            </li>
+            <li>
+                <a
+                    href="https://www.solidaires.org/IMG/pdf/fichesolidairesgav-2.pdf?2033/185286a4b145df794826e345eb2c38b8323fab99">
+                    La garde à vue en 10 questions (version PDF)
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <footer>
+        réalisé avec amour sans volonté d'encourager les violences.
+    </footer>
 
 </body>
 
